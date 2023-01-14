@@ -1,11 +1,13 @@
 import Logo from '../../assets/logo.svg';
 
+import { HeaderContainer } from './style';
+
 export function Header() {
   return (
-    <header>
-      <div>
+    <HeaderContainer>
+      <div className='content'>
         <img src={Logo} />
       </div>
-    </header>
+    </HeaderContainer>
   )
 }
