@@ -4,7 +4,7 @@ import { Home } from "./pages/Home";
 import { Post } from "./pages/Post";
 import { DafaultLayout } from "./layouts/DeafultLayout";
 
-export function Routers() {
+export function Router() {
   return (
     <Routes>
       <Route path="/" element={<DafaultLayout />}>
