@@ -1,7 +1,13 @@
+import { AuthorCard } from "./AuthorCard";
+import { HomeContainer } from "./style";
+
 export function Home() {
   return (
-    <main>
-      <h1>Home</h1>
-    </main>
+    <HomeContainer>
+      <AuthorCard />
+      <section className="publications">
+        <h2>Publicações</h2>
+      </section>
+    </HomeContainer>
   )
 }

@@ -21,6 +21,23 @@ export const GlobalStyle = createGlobalStyle`
     color: ${props => props.theme['base-text']};
   }
 
+  h1 {
+    color: ${props => props.theme['base-title']};
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  a {
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-size: .75rem;
+    font-weight: 700;
+    color: ${props => props.theme.blue};
+    text-decoration: none;
+  }
+
   :focus {
     box-shadow: 0 0 0 2px ${props => props.theme['base-text']};
     outline: 0;
