@@ -5,7 +5,7 @@ import {
   FaExternalLinkAlt,
 } from 'react-icons/fa';
 import { useContextSelector } from 'use-context-selector';
-import { PostsContext } from '../../../contexts/PostsContext';
+import { PostsContext } from '../../../../contexts/PostsContext';
 import { ArthorCardContainer } from './style';
 
 export function AuthorCard() {
@@ -19,7 +19,7 @@ export function AuthorCard() {
       <div className='author'>
         <header>
           <h1>{user.name}</h1>
-          <a href='https://github.com/' target='_blank'>
+          <a href='https://github.com/ednaldocordeiro' target='_blank'>
             GITHUB
             <FaExternalLinkAlt />
           </a>

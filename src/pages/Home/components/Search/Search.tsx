@@ -4,7 +4,7 @@ import { SearchContainer } from './styles';
 
 import { FaSearch } from 'react-icons/fa';
 import { useContextSelector } from 'use-context-selector';
-import { PostsContext } from '../../../contexts/PostsContext';
+import { PostsContext } from '../../../../contexts/PostsContext';
 
 interface FormData {
   search: string;

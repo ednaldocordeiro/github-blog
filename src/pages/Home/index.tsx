@@ -1,12 +1,11 @@
 import { ChangeEvent } from "react";
-import { AuthorCard } from "./AuthorCard";
-import { Post } from "./Post";
+import { AuthorCard } from "./components/AuthorCard";
+import { Post } from "./components/Post";
 import { HomeContainer } from "./style";
 import { PostsContext } from "../../contexts/PostsContext";
 import { useContextSelector } from "use-context-selector";
 
-import { useForm } from "react-hook-form";
-import { Search } from "./components/Search";
+import { Search } from "./components/Search/Search";
 import { EmptyList } from "../../components/EmptyList";
 
 export function Home() {
