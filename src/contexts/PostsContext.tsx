@@ -21,6 +21,7 @@ interface Post {
 interface PostsContext {
   user: User;
   posts: Post[];
+  fetchPosts: (searchTeaxt?: string) => void;
 }
 
 interface PostsProviderProps {
@@ -40,8 +41,8 @@ export function PostsProvider({children}: PostsProviderProps) {
     setUser(response.data)
   }, []);
 
-  const fetchPosts = useCallback(async () => {
-    const response = await api.get('/search/issues?q=%20repo:ednaldocordeiro/github-blog');
+  const fetchPosts = useCallback(async (searchText: string = '') => {
+    const response = await api.get(`/search/issues?q=${searchText}%20repo:ednaldocordeiro/github-blog`);
     setPosts(response.data.items);
   }, []);
 
@@ -53,7 +54,8 @@ export function PostsProvider({children}: PostsProviderProps) {
   return (
     <PostsContext.Provider value={{
       user,
-      posts
+      posts,
+      fetchPosts
     }}>
       {children}
     </PostsContext.Provider>

@@ -38,11 +38,6 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  :focus {
-    box-shadow: 0 0 0 2px ${props => props.theme['base-text']};
-    outline: 0;
-  }
-
   @media (max-width: 550px) {
     html {
       font-size: 85.7%

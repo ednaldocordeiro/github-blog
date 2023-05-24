@@ -8,21 +8,6 @@ export const HomeContainer = styled.main`
     margin: 4.5rem auto 0;
   }
 
-  .search {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 6px;
-    border: 1px solid ${(props) => props.theme['base-border']};
-    background-color: ${(props) => props.theme['base-input']};
-    font-size: 1rem;
-    margin-top: 1.5rem;
-    outline: none;
-
-    &::placeholder {
-      color: ${(props) => props.theme['base-label']};
-    }
-  }
-
   .posts {
     display: flex;
     align-items: center;
