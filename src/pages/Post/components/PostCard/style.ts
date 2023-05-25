@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const AuthorCardContainer = styled.div`
+export const PostCardContainer = styled.div`
   max-width: 1120px;
   margin: 0 auto;
   padding: 2rem;
@@ -13,16 +13,11 @@ export const AuthorCardContainer = styled.div`
 
   box-shadow: 0 2px 28px rgba(0, 0, 0, 0.2);
 
-  .author {
+  .postInfo {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-
-  img {
-    height: 9.25rem;
-    border-radius: 10px;
   }
 
   header {
@@ -30,9 +25,15 @@ export const AuthorCardContainer = styled.div`
     justify-content: space-between;
   }
 
+  h1 {
+    margin-top: 2.5rem;
+  }
+
   .informations {
     display: flex;
     gap: 1.5rem;
+
+    margin-top: 1rem;
 
     span {
       color: ${props => props.theme["base-subtitle"]};

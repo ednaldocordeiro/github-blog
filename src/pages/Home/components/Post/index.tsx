@@ -7,13 +7,14 @@ interface PostProps {
   title: string;
   body: string;
   created_at: string;
+  number: number;
 }
 
-export function Post({body, title, id}: PostProps) {
+export function Post({body, title, number}: PostProps) {
   const navigate = useNavigate()
 
   return (
-    <PostContainer onClick={() => navigate(`/post/${id}`)}>
+    <PostContainer onClick={() => navigate(`/post/${number}`)}>
       <h1>{title}</h1>
       <ReactMarkdown>{body.substring(0, 265).concat('...')}</ReactMarkdown>
     </PostContainer>

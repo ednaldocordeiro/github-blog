@@ -6,7 +6,7 @@ import {
 } from 'react-icons/fa';
 import { useContextSelector } from 'use-context-selector';
 import { PostsContext } from '../../../../contexts/PostsContext';
-import { ArthorCardContainer } from './style';
+import { AuthorCardContainer } from './style';
 
 export function AuthorCard() {
   const user = useContextSelector(PostsContext, (ctx) => {
@@ -14,7 +14,7 @@ export function AuthorCard() {
   });
 
   return (
-    <ArthorCardContainer>
+    <AuthorCardContainer>
       <img src={user.avatar_url} alt='author' />
       <div className='author'>
         <header>
@@ -37,6 +37,6 @@ export function AuthorCard() {
           </span>
         </div>
       </div>
-    </ArthorCardContainer>
+    </AuthorCardContainer>
   );
 }

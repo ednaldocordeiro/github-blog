@@ -16,12 +16,20 @@ interface Post {
   title: string;
   body: string;
   created_at: string;
+  number: number;
+  comments: number;
+  user: {
+    login: string;
+  }
+  html_url: string;
 }
 
 interface PostsContext {
   user: User;
   posts: Post[];
+  post: Post;
   fetchPosts: (searchTeaxt?: string) => void;
+  fetchPost: (number: number) => void;
 }
 
 interface PostsProviderProps {
@@ -35,6 +43,7 @@ export function PostsProvider({children}: PostsProviderProps) {
 
   const [user, setUser] = useState({} as User)
   const [posts, setPosts] = useState<Post[]>([]);
+  const [post, setPost] = useState({} as Post);
 
   const fetchUser = useCallback(async () =>{
     const response = await api.get('/users/ednaldocordeiro');
@@ -46,6 +55,11 @@ export function PostsProvider({children}: PostsProviderProps) {
     setPosts(response.data.items);
   }, []);
 
+  const fetchPost = useCallback(async (number: number) => {
+    const response = await api.get(`/repos/ednaldocordeiro/github-blog/issues/${number}`);
+    setPost(response.data)
+  }, []);
+
   useEffect(() => {
     fetchUser();
     fetchPosts();
@@ -55,7 +69,9 @@ export function PostsProvider({children}: PostsProviderProps) {
     <PostsContext.Provider value={{
       user,
       posts,
-      fetchPosts
+      fetchPosts,
+      fetchPost,
+      post
     }}>
       {children}
     </PostsContext.Provider>

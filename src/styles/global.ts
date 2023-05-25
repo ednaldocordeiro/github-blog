@@ -27,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.3;
   }
 
-  a {
+  a, .link {
     display: flex !important;
     align-items: center;
     gap: 0.5rem;
@@ -36,6 +36,10 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     color: ${props => props.theme.blue};
     text-decoration: none;
+    
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
   }
 
   @media (max-width: 550px) {
